@@ -49,10 +49,6 @@ export default function CopyExample() {
         />
 
         <button onClick={() => handleConvert(text)}>Converter</button>
-        {/* <h4>
-          Result:
-          <p className="result">{}</p>
-        </h4> */}
       </Content>
     </Container>
   );

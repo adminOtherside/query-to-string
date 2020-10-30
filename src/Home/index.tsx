@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { StringDecoder } from 'string_decoder';
 import { Container, Content } from './styles';
 
 export default function CopyExample() {
@@ -7,8 +6,6 @@ export default function CopyExample() {
   const [text, setText] = useState('');
 
   function handleText(e: string) {
-    console.log(e);
-
     const expression = /\r?\n|\r/g;
     const expression2 = /^/gm;
     const expression3 = /$/gm;
@@ -20,8 +17,6 @@ export default function CopyExample() {
       .replace(expression, subst)
       .replace(expression2, subst2)
       .replace(expression3, subst3);
-
-    console.log(result);
 
     navigator.clipboard.writeText(result).then(
       function () {
@@ -57,21 +52,3 @@ export default function CopyExample() {
     </Container>
   );
 }
-
-// import React from 'react';
-// import { Container } from './styles';
-
-// import ToolBar from '../../components/ToolBar';
-// import Menu from '../../components/Menu';
-
-// const Home: React.FC = () => {
-//   return (
-//     <Container>
-//       <ToolBar />
-//       <Menu />
-//       <div className="page">HOME</div>
-//     </Container>
-//   );
-// };
-
-// export default Home;

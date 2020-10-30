@@ -12,7 +12,7 @@ export default function CopyExample() {
     const expression = /\r?\n|\r/g;
     const expression2 = /^/gm;
     const expression3 = /$/gm;
-    const cleaner = ``;
+    const cleaner = ` `;
     const subst = `"`;
 
     const result = text
@@ -28,6 +28,7 @@ export default function CopyExample() {
         setCopySuccess('Not Copied!');
       },
     );
+    setText('');
   }
 
   return (
@@ -42,8 +43,11 @@ export default function CopyExample() {
         <textarea
           placeholder="put your query here"
           autoFocus
+          onFocus={() => setCopySuccess('')}
           onChange={e => handleText(e.target.value)}
+          value={text}
         />
+
         <button onClick={() => handleConvert(text)}>Converter</button>
         {/* <h4>
           Result:

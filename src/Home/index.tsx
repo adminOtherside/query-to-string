@@ -9,14 +9,13 @@ export default function CopyExample() {
     const expression = /\r?\n|\r/g;
     const expression2 = /^/gm;
     const expression3 = /$/gm;
-    const subst = ``;
-    const subst2 = `"`;
-    const subst3 = `"`;
+    const cleaner = ``;
+    const subst = `"`;
 
     const result = e
-      .replace(expression, subst)
-      .replace(expression2, subst2)
-      .replace(expression3, subst3);
+      .replace(expression, cleaner)
+      .replace(expression2, subst)
+      .replace(expression3, subst);
 
     navigator.clipboard.writeText(result).then(
       function () {

@@ -38,7 +38,6 @@ export const Content = styled.div`
   }
   p.result {
     padding: 10px;
-
     color: #cecece;
     font-size: 12px;
     text-align: left;
@@ -47,14 +46,16 @@ export const Content = styled.div`
   span.succsess {
     position: absolute;
     margin: auto;
-    top: 10px;
+    top: 20px;
     color: blue;
+    font-size: 18px;
   }
   span.support {
     position: absolute;
     top: 10px;
     right: 10px;
     color: green;
+    font-size: 10px;
   }
   span.notsupport {
     position: absolute;

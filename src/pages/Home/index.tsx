@@ -1,29 +1,60 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
+import { StringDecoder } from 'string_decoder';
+import { Container, Content } from './styles';
 
 export default function CopyExample() {
   const [copySuccess, setCopySuccess] = useState('');
-  const textAreaRef = useRef(null);
+  const [text, setText] = useState('');
 
-  function copyToClipboard(e) {
-    textAreaRef.current.select();
-    document.execCommand('copy');
+  function handleText(e: string) {
+    console.log(e);
 
-    e.target.focus();
-    setCopySuccess('Copied!');
+    const expression = /\r?\n|\r/g;
+    const expression2 = /^/gm;
+    const expression3 = /$/gm;
+    const subst = ``;
+    const subst2 = `"`;
+    const subst3 = `"`;
+
+    const result = e
+      .replace(expression, subst)
+      .replace(expression2, subst2)
+      .replace(expression3, subst3);
+
+    console.log(result);
+
+    navigator.clipboard.writeText(result).then(
+      function () {
+        setCopySuccess('Query parsed and add to clipBoard');
+      },
+      function () {
+        setCopySuccess('Not Copied!');
+      },
+    );
+
+    setText(result);
   }
 
   return (
-    <div>
-      {document.queryCommandSupported('copy') && (
-        <div>
-          <button onClick={copyToClipboard}>Copy</button>
-          {copySuccess}
-        </div>
-      )}
-      <form>
-        <textarea ref={textAreaRef} value="Some text to copy" />
-      </form>
-    </div>
+    <Container>
+      <Content>
+        {document.queryCommandSupported('copy') ? (
+          <span className="support">copy command is supported</span>
+        ) : (
+          <span className="notsupport">copy command is NOT supported</span>
+        )}
+        <span className="succsess">{copySuccess}</span>
+        <textarea
+          placeholder="put your query here"
+          autoFocus
+          onChange={e => handleText(e.target.value)}
+        />
+        <h4>
+          Result:
+          <p className="result">{text}</p>
+        </h4>
+      </Content>
+    </Container>
   );
 }
 

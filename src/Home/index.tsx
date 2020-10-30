@@ -6,27 +6,28 @@ export default function CopyExample() {
   const [text, setText] = useState('');
 
   function handleText(e: string) {
+    setText(e);
+  }
+  function handleConvert(text: string) {
     const expression = /\r?\n|\r/g;
     const expression2 = /^/gm;
     const expression3 = /$/gm;
     const cleaner = ``;
     const subst = `"`;
 
-    const result = e
+    const result = text
       .replace(expression, cleaner)
       .replace(expression2, subst)
       .replace(expression3, subst);
 
     navigator.clipboard.writeText(result).then(
       function () {
-        setCopySuccess('Query parsed and add to clipBoard');
+        setCopySuccess('Query converted and add to clipBoard');
       },
       function () {
         setCopySuccess('Not Copied!');
       },
     );
-
-    setText(result);
   }
 
   return (
@@ -43,10 +44,11 @@ export default function CopyExample() {
           autoFocus
           onChange={e => handleText(e.target.value)}
         />
-        <h4>
+        <button onClick={() => handleConvert(text)}>Converter</button>
+        {/* <h4>
           Result:
-          <p className="result">{text}</p>
-        </h4>
+          <p className="result">{}</p>
+        </h4> */}
       </Content>
     </Container>
   );

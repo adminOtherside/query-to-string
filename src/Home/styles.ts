@@ -27,8 +27,26 @@ export const Content = styled.div`
     height: 60vh;
     width: 50vw;
     border: solid #cecece 1px;
-    & ::placeholder {
-      margin-top: 50%;
+    &::placeholder {
+      color: #cecece;
+      text-align: center;
+      margin-top: 30px;
+      font-size: 30px;
+    }
+  }
+
+  button {
+    height: 60px;
+    width: 200px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: rgba(173, 255, 47, 0.8);
+    margin-bottom: 30px;
+    color: white;
+
+    &:hover {
+      background-color: rgb(173, 255, 47);
     }
   }
   h4 {
@@ -41,14 +59,15 @@ export const Content = styled.div`
     color: #cecece;
     font-size: 12px;
     text-align: left;
+    overflow: hidden;
   }
 
   span.succsess {
     position: absolute;
     margin: auto;
     top: 20px;
-    color: blue;
-    font-size: 18px;
+    color: rgb(132, 222, 2);
+    font-size: 30px;
   }
   span.support {
     position: absolute;

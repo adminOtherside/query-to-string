@@ -31,10 +31,12 @@ export const Content = styled.div`
     textarea {
       margin: auto;
       height: 60vh;
-      width: 20vw;
+      width: 30vw;
       border: solid #cecece 1px;
       margin-left: 2px;
       margin-right: 2px;
+      font-size: 14px;
+      padding: 12px;
       &::placeholder {
         color: #cecece;
         text-align: center;
@@ -48,6 +50,8 @@ export const Content = styled.div`
       flex: 1;
       margin-right: 3px;
       border: solid #cecece 1px;
+      font-size: 14px;
+      padding: 12px;
       &::placeholder {
         color: #cecece;
         text-align: center;
@@ -55,21 +59,45 @@ export const Content = styled.div`
       }
     }
   }
+  div.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 40px;
+    color: black;
+    button {
+      height: 60px;
+      width: 200px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      background-color: rgba(173, 255, 47, 0.8);
+      color: white;
+      margin-right: 6px;
 
-  button {
-    height: 60px;
-    width: 200px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    background-color: rgba(173, 255, 47, 0.8);
-    margin-top: 50px;
-    color: white;
-
-    &:hover {
-      background-color: rgb(173, 255, 47);
+      &:hover {
+        background-color: rgb(173, 255, 47);
+      }
+    }
+    div {
+      display: flex;
+      align-items: center;
+      margin-top: 6px;
+      input {
+        width: 30px;
+        height: 30px;
+        margin-right: 6px;
+        outline: 3px;
+      }
+      span {
+        font-size: 20px;
+        margin-right: 6px;
+      }
     }
   }
+
   h4 {
     color: #cecece;
     text-align: left;

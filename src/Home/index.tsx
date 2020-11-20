@@ -39,7 +39,7 @@ export default function CopyExample() {
 
     if (select) {
       const subsExpression4 = /:/gm; //altera ":" por ${
-      const subs4 = `$\{e.e.`;
+      const subs4 = `$\{`;
       const subsExpression5 = /"/gm; //altera "  por `
       const subs5 = '`';
       const subsExpression6 = /  +/gm; //aremove espaços em branco

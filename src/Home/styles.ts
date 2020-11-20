@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: column;
   width: 100vw;
   height: 100vh;
   background-color: white;
+  padding: 10px;
 `;
 export const Content = styled.div`
   display: flex;
@@ -13,25 +13,46 @@ export const Content = styled.div`
   align-items: center;
   margin: auto;
   height: 80vh;
-  width: 60vw;
+  width: 80vw;
   padding-right: 2px;
   background-color: white;
   border-radius: 20px;
   box-shadow: 6px 6px 10px #cecece;
   border: solid #cecece 1px;
-
   text-align: left;
 
-  textarea {
-    margin: auto;
+  div.textareas {
+    display: flex;
     height: 60vh;
-    width: 50vw;
-    border: solid #cecece 1px;
-    &::placeholder {
-      color: #cecece;
-      text-align: center;
-      margin-top: 30px;
-      font-size: 30px;
+    width: 80vw;
+    padding-top: 30px;
+    padding-left: 3px;
+
+    textarea {
+      margin: auto;
+      height: 60vh;
+      width: 20vw;
+      border: solid #cecece 1px;
+      margin-left: 2px;
+      margin-right: 2px;
+      &::placeholder {
+        color: #cecece;
+        text-align: center;
+        font-size: 30px;
+      }
+    }
+
+    textarea.result {
+      margin: auto;
+      height: 60vh;
+      flex: 1;
+      margin-right: 3px;
+      border: solid #cecece 1px;
+      &::placeholder {
+        color: #cecece;
+        text-align: center;
+        font-size: 30px;
+      }
     }
   }
 
@@ -42,7 +63,7 @@ export const Content = styled.div`
     border: none;
     cursor: pointer;
     background-color: rgba(173, 255, 47, 0.8);
-    margin-bottom: 30px;
+    margin-top: 50px;
     color: white;
 
     &:hover {
@@ -53,13 +74,6 @@ export const Content = styled.div`
     color: #cecece;
     text-align: left;
     margin-left: 10px;
-  }
-  p.result {
-    padding: 10px;
-    color: #cecece;
-    font-size: 12px;
-    text-align: left;
-    overflow: hidden;
   }
 
   span.succsess {

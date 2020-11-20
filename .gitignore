@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/data
 /_testesLogicos
 /.pnp
 .pnp.js

@@ -4,6 +4,7 @@ import { Container, Content } from './styles';
 export default function CopyExample() {
   const [copySuccess, setCopySuccess] = useState('');
   const [text, setText] = useState('');
+  const [result, setResult] = useState('');
 
   function handleText(e: string) {
     setText(e);
@@ -15,12 +16,14 @@ export default function CopyExample() {
     const cleaner = ` `;
     const subst = `"`;
 
-    const result = text
+    const replaced = text
       .replace(expression, cleaner)
       .replace(expression2, subst)
       .replace(expression3, subst);
 
-    navigator.clipboard.writeText(result).then(
+    setResult(replaced);
+
+    navigator.clipboard.writeText(replaced).then(
       function () {
         setCopySuccess('Query converted and add to clipBoard');
       },
@@ -28,7 +31,6 @@ export default function CopyExample() {
         setCopySuccess('Not Copied!');
       },
     );
-    setText('');
   }
 
   return (
@@ -40,14 +42,23 @@ export default function CopyExample() {
           <span className="notsupport">copy command is NOT supported</span>
         )}
         <span className="succsess">{copySuccess}</span>
-        <textarea
-          placeholder="put your query here"
-          autoFocus
-          onFocus={() => setCopySuccess('')}
-          onChange={e => handleText(e.target.value)}
-          value={text}
-        />
-
+        <div className="textareas">
+          <textarea
+            placeholder="put your query here"
+            autoFocus
+            onChange={e => handleText(e.target.value)}
+            value={text}
+          />
+          <textarea
+            className="result"
+            placeholder="result"
+            autoFocus
+            onFocus={() => {
+              setCopySuccess('');
+            }}
+            value={result}
+          />
+        </div>
         <button onClick={() => handleConvert(text)}>Converter</button>
       </Content>
     </Container>

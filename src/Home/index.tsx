@@ -23,7 +23,7 @@ export default function CopyExample() {
     // .replace(cleanExpression3, clean);
 
     const subsExpression = /'/gm; // altera todas ' por "
-    const subs = `"`;
+    const subs = ` "`;
     const subsExpression1 = /"#39"/gm; // altera "#39" por '
     const subs1 = `'`;
     const subsExpression2 = /$/gm; //adiciona "+" no final das linhas

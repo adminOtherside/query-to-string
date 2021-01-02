@@ -30,6 +30,7 @@ export default function CopyExample() {
     const subs2 = `+`;
     const subsExpression3 = /\+$/g; //altera "+" do final de tudo por ,
     const subs3 = `,`;
+    //code
 
     let replaced = cleaning
       .replace(subsExpression, subs)

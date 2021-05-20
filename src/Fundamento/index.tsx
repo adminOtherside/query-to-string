@@ -50,7 +50,7 @@ export default function Fundamento() {
         <span className="succsess">{copySuccess}</span>
         <div className="textareas">
           <textarea
-            placeholder="put your query here"
+            placeholder="put your text here"
             autoFocus
             onChange={e => handleText(e.target.value)}
             onFocus={() => {
